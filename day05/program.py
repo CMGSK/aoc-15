@@ -1,4 +1,4 @@
-file = open("input.txt")
+import re
 
 
 def contains_vowels(line):
@@ -30,11 +30,24 @@ def has_reps(line):
     return False
 
 
+# Originally I wanted to parse these problems to get comfy with python
+# but ain't doing second part by manual parsing LOL
+def double_rep(line):
+    pair_rep = r"(\w\w).*\1"
+    couple_split = r"(\w)\w\1"
+    if re.search(pair_rep, line) is None or re.search(couple_split, line) is None:
+        return False
+    else:
+        return True
+
+
+file = open("input.txt")
 part1 = 0
+part2 = 0
 for line in file:
-    vowels = contains_vowels(line)
-    consecution = no_consec(line)
-    repetition = has_reps(line)
-    if vowels and consecution and repetition:
+    if contains_vowels(line) and no_consec(line) and has_reps(line):
         part1 += 1
+    if double_rep(line):
+        part2 += 1
 print(part1)
+print(part2)
