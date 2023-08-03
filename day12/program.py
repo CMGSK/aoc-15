@@ -1,26 +1,26 @@
 import re
 
 
-def replacer(m):
-    json_obj = m.group(0)
-    if '":red"' not in json_obj:
-        return str(json_obj)
-    else:
-        return '[0]'
+def result_sum(input):
+    r = 0
+    for n in re.findall(r'-?\d+', input):
+        r += int(n)
+    return r
 
 
-input = open('input.txt')
+input = open('input.txt').read()
 result = 0
-result2 = 0
-for line in input:
-    for n in re.findall(r'-?\d+', line):
-        result += int(n)
-print(result)
+result += result_sum(input)
+print('Result 1: ' + str(result))
 
+result2 = 0
 while ':"red"' in input:
-    input = re.sub(r'\{[^{}]*\}', replacer, input)
-print(input)
-# for line in input:
-#     for n in re.findall(r'-?\d+', line):
-#         result2 += int(n)
-print(result2)
+    for obj in re.findall(r'{[^{}]*}', input):
+        replacement = ''
+        if ':"red"' in obj:
+            replacement = '[0]'
+        else:
+            replacement = '[' + str(result_sum(obj)) + ']'
+        input = input.replace(obj, replacement)
+result2 += result_sum(input)
+print('Result 2: ' + str(result2))
