@@ -1,5 +1,5 @@
-from itertools import permutations
 from collections import defaultdict
+from itertools import permutations
 
 
 # For each both cities in permutation

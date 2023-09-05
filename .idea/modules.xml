@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../KNN-AI-Practice/.idea/KNN-AI-Practice.iml" filepath="$PROJECT_DIR$/../KNN-AI-Practice/.idea/KNN-AI-Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../KNN-IA-Practice/.idea/KNN-IA-Practice.iml" filepath="$PROJECT_DIR$/../KNN-IA-Practice/.idea/KNN-IA-Practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../AI-tfg/.idea/OCRJP.iml" filepath="$PROJECT_DIR$/../AI-tfg/.idea/OCRJP.iml" />
       <module fileurl="file://$PROJECT_DIR$/../YTPLD/.idea/YTPLD.iml" filepath="$PROJECT_DIR$/../YTPLD/.idea/YTPLD.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/aoc-15.iml" filepath="$PROJECT_DIR$/.idea/aoc-15.iml" />
     </modules>
